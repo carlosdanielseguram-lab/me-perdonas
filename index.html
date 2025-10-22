@@ -5,20 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>¿Me perdonas?</title>
   <style>
-    body { text-align: center; font-family: Arial, sans-serif; margin-top: 50px; }
-    button { padding: 20px 40px; font-size: 20px; margin: 10px; cursor: pointer; transition: all 0.3s ease; }
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 50px;
+      background-color: #fff0f5;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 20px;
+      margin: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
     #btnNo { background-color: #f44336; color: white; }
     #btnYes { background-color: #4CAF50; color: white; }
+    img { margin-top: 20px; }
   </style>
 </head>
 <body>
   <h1>¿Me perdonas?</h1>
   <p>Te prometo que no volverá a pasar 😔</p>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Red_heart.svg/800px-Red_heart.svg.png" alt="Corazón" width="150">
-  
+
   <br><br>
   <button id="btnNo">No</button>
   <button id="btnYes">Sí</button>
+
+  <!-- Reproductor de YouTube oculto -->
+  <iframe width="0" height="0" 
+    src="https://www.youtube.com/embed/72cGFf35nNI?autoplay=1&loop=1&playlist=72cGFf35nNI" 
+    title="YouTube video player" frameborder="0" 
+    allow="autoplay; encrypted-media" allowfullscreen>
+  </iframe>
 
   <script>
     let noCount = 0;
@@ -27,8 +46,10 @@
 
     btnNo.addEventListener('click', () => {
       noCount++;
+      // aumentar botón "Sí"
       btnYes.style.fontSize = `${20 + noCount * 5}px`;
       btnYes.style.padding = `${20 + noCount * 5}px ${40 + noCount * 10}px`;
+      // disminuir botón "No"
       btnNo.style.fontSize = `${20 - noCount * 2}px`;
       btnNo.style.padding = `${20 - noCount * 2}px ${40 - noCount * 4}px`;
     });
@@ -39,4 +60,5 @@
   </script>
 </body>
 </html>
+
 
