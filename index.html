@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Me perdonas?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 20px;
+      margin: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #btnNo {
+      background-color: #f44336;
+      color: white;
+    }
+    #btnYes {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>¿Me perdonas?</h1>
+  <button id="btnNo">No</button>
+  <button id="btnYes">Sí</button>
+
+  <script>
+    let noCount = 0;
+    const btnNo = document.getElementById('btnNo');
+    const btnYes = document.getElementById('btnYes');
+
+    btnNo.addEventListener('click', () => {
+      noCount++;
+      btnYes.style.fontSize = `${20 + noCount * 5}px`;
+      btnYes.style.padding = `${20 + noCount * 5}px ${40 + noCount * 10}px`;
+      btnNo.style.fontSize = `${20 - noCount * 2}px`;
+      btnNo.style.padding = `${20 - noCount * 2}px ${40 - noCount * 4}px`;
+    });
+
+    btnYes.addEventListener('click', () => {
+      alert('¡Gracias por perdonarme! 😊');
+    });
+  </script>
+</body>
+</html>
